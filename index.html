@@ -185,8 +185,10 @@
   <a href="memories.html" class="memory-link">View Memories of Us →</a>
 
   <!-- Play Audio Button (for Mobile Devices) -->
-  <button id="playAudioBtn" onclick="playAudio()">Play Music</button>
-
+  <button onclick="document.getElementById('loveSong').play()" style="margin-top: 30px; padding: 10px 20px; font-size: 1rem; background-color: #f06292; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    🎵 Play Our Song
+  </button>
+  
   <!-- Modal -->
   <div class="modal" id="loveModal">
     <div class="modal-content">
@@ -205,9 +207,10 @@
   </div>
 
   <!-- Background music -->
-  <audio id="backgroundAudio" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+  <audio id="loveSong">
+    <source src="WhatWouldiDo.mp3" type="audio/mpeg">
   </audio>
+  
 
   <!-- Script -->
   <script>
