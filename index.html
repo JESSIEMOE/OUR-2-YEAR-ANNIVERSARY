@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Anniversary My Jessica</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet"/>
   <style>
     * {
       margin: 0;
@@ -66,44 +66,12 @@
     .envelope:hover {
       transform: scale(1.05);
     }
-    .hearts {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
+
     .heart {
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      transform: rotate(45deg);
-      animation: float 6s infinite ease-in;
-    }
-    .heart:before, .heart:after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: red;
-      border-radius: 50%;
-    }
-    .heart:before {
-      top: -10px;
-      left: 0;
-    }
-    .heart:after {
-      left: -10px;
-      top: 0;
-    }
-    .heart {
-      position: absolute;
-      color: #e91e63;
       font-size: 50px;
       animation: float 3s infinite ease-in-out;
+      color: #e91e63;
     }
     .heart:nth-child(odd) {
       animation-duration: 4s;
@@ -113,7 +81,7 @@
     }
 
     .modal {
-      display: none !important;
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
@@ -124,8 +92,8 @@
       align-items: center;
       padding: 20px;
       z-index: 99;
-      overflow-y: auto;
     }
+
     .modal-content {
       background: #fff3f3;
       padding: 30px;
@@ -136,7 +104,10 @@
       font-size: 1rem;
       line-height: 1.7;
       position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
     }
+
     .close-btn {
       position: absolute;
       top: 10px;
@@ -145,6 +116,7 @@
       cursor: pointer;
       color: #880e4f;
     }
+
     .memory-link {
       display: inline-block;
       margin-top: 20px;
@@ -156,19 +128,6 @@
     }
     .memory-link:hover {
       color: #ad1457;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .envelope {
-        width: 150px;
-        height: 90px;
-      }
-      .modal-content {
-        padding: 20px;
-      }
     }
 
     @keyframes float {
@@ -185,10 +144,24 @@
         opacity: 1;
       }
     }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .envelope {
+        width: 150px;
+        height: 90px;
+      }
+      .modal-content {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Floating Hearts -->
   <div class="heart" style="top: 20%; left: 10%;">❤️</div>
   <div class="heart" style="top: 30%; left: 40%;">❤️</div>
   <div class="heart" style="top: 50%; left: 60%;">❤️</div>
@@ -197,18 +170,22 @@
 
   <h1>HAPPY 2 YEAR ANNIVERSARY MY JESSICA ❤️</h1>
 
+  <!-- Envelope -->
   <div class="envelope-wrapper">
-    <div class="envelope" id="envelopeBox">
+    <div class="envelope" onclick="openModal()">
       <span>OPEN ME</span>
     </div>
   </div>
 
+  <!-- Link to memories -->
   <a href="memories.html" class="memory-link">View Memories of Us →</a>
 
+  <!-- Modal -->
   <div class="modal" id="loveModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
-      <p>My Jessica,<br><br>
+      <p>
+        My Jessica,<br><br>
         Happy 2-Year Anniversary, my love. ❤️<br><br>
         Two years of laughter, love, growth, and memories. We’ve walked through fires together and come out stronger each time. You are the most beautiful, patient, loving woman I’ve ever known, and I thank God every day for putting you in my life.<br><br>
         You've been my light in darkness, my calm in chaos, and my joy in every day. I love you with every breath, every heartbeat, and every fiber of who I am. Your love has transformed me, healed me, and given me hope for a forever filled with you.<br><br>
@@ -220,23 +197,20 @@
     </div>
   </div>
 
+  <!-- Background music -->
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
   </audio>
 
+  <!-- Script -->
   <script>
     function openModal() {
       document.getElementById('loveModal').style.display = 'flex';
     }
+
     function closeModal() {
       document.getElementById('loveModal').style.display = 'none';
     }
-
-    window.onload = function () {
-      document.getElementById('loveModal').style.display = 'none';
-    };
-
-    document.getElementById('envelopeBox').addEventListener('click', openModal);
   </script>
 </body>
 </html>
