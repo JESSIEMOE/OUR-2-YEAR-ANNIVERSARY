@@ -155,10 +155,6 @@
       }
       .modal-content {
         padding: 20px;
-        margin-bottom:90px;
-        margin-top:90px;
-
-
       }
     }
   </style>
@@ -184,6 +180,9 @@
   <!-- Link to memories -->
   <a href="memories.html" class="memory-link">View Memories of Us →</a>
 
+  <!-- Play Audio Button (for Mobile Devices) -->
+  <button id="playAudioBtn" onclick="playAudio()">Play Music</button>
+
   <!-- Modal -->
   <div class="modal" id="loveModal">
     <div class="modal-content">
@@ -202,7 +201,7 @@
   </div>
 
   <!-- Background music -->
-  <audio autoplay loop>
+  <audio id="backgroundAudio" loop>
     <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
   </audio>
 
@@ -214,6 +213,12 @@
 
     function closeModal() {
       document.getElementById('loveModal').style.display = 'none';
+    }
+
+    function playAudio() {
+      var audio = document.getElementById('backgroundAudio');
+      audio.play();
+      document.getElementById('playAudioBtn').style.display = 'none';  // Hide the play button once audio starts
     }
   </script>
 </body>
