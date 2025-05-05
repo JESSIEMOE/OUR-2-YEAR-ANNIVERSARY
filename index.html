@@ -99,8 +99,6 @@
       left: -10px;
       top: 0;
     }
-    
-    
     .heart {
       position: absolute;
       color: #e91e63;
@@ -114,40 +112,31 @@
       animation-duration: 5s;
     }
 
-
-      .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 99;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.modal-content {
-  margin-top: 300px;
-  margin-bottom: 00px;
-  background: #fff3f3;
-  padding: 30px;
-  border-radius: 15px;
-  width: 100%;
-  max-width: 600px;
-  color: #4e342e;
-  font-size: 1rem;
-  line-height: 1.7;
-  position: relative;
-  box-sizing: border-box;
-}
-
+    .modal {
+      display: none !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 99;
+      overflow-y: auto;
+    }
+    .modal-content {
+      background: #fff3f3;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 700px;
+      width: 100%;
+      color: #4e342e;
+      font-size: 1rem;
+      line-height: 1.7;
+      position: relative;
+    }
     .close-btn {
       position: absolute;
       top: 10px;
@@ -169,7 +158,6 @@
       color: #ad1457;
     }
 
-
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -179,13 +167,9 @@
         height: 90px;
       }
       .modal-content {
-    padding: 20px;
-    font-size: 0.95rem;
-  }
-
+        padding: 20px;
+      }
     }
-
-
 
     @keyframes float {
       0% {
@@ -200,11 +184,7 @@
         transform: translateY(0) scale(1);
         opacity: 1;
       }
-
-
-
     }
-
   </style>
 </head>
 
@@ -218,7 +198,7 @@
   <h1>HAPPY 2 YEAR ANNIVERSARY MY JESSICA ❤️</h1>
 
   <div class="envelope-wrapper">
-    <div class="envelope" onclick="openModal()">
+    <div class="envelope" id="envelopeBox">
       <span>OPEN ME</span>
     </div>
   </div>
@@ -229,13 +209,13 @@
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <p>My Jessica,<br><br>
-      Happy 2-Year Anniversary, my love. ❤️<br><br>
-      Two years of laughter, love, growth, and memories. We’ve walked through fires together and come out stronger each time. You are the most beautiful, patient, loving woman I’ve ever known, and I thank God every day for putting you in my life.<br><br>
-      You've been my light in darkness, my calm in chaos, and my joy in every day. I love you with every breath, every heartbeat, and every fiber of who I am. Your love has transformed me, healed me, and given me hope for a forever filled with you.<br><br>
-      I don’t want a future that doesn’t have you in it. I want to grow old with you, laugh with you, cry with you, build a life and family with you. I want you to always know how deeply and truly you are loved—by me.<br><br>
-      Here’s to forever, Jessica. Here's to us. 💍❤️<br><br>
-      Always and forever yours,<br>
-      <em>Your Boyfriend, Moey.</em>
+        Happy 2-Year Anniversary, my love. ❤️<br><br>
+        Two years of laughter, love, growth, and memories. We’ve walked through fires together and come out stronger each time. You are the most beautiful, patient, loving woman I’ve ever known, and I thank God every day for putting you in my life.<br><br>
+        You've been my light in darkness, my calm in chaos, and my joy in every day. I love you with every breath, every heartbeat, and every fiber of who I am. Your love has transformed me, healed me, and given me hope for a forever filled with you.<br><br>
+        I don’t want a future that doesn’t have you in it. I want to grow old with you, laugh with you, cry with you, build a life and family with you. I want you to always know how deeply and truly you are loved—by me.<br><br>
+        Here’s to forever, Jessica. Here's to us. 💍❤️<br><br>
+        Always and forever yours,<br>
+        <em>Your Boyfriend, Moey.</em>
       </p>
     </div>
   </div>
@@ -251,6 +231,12 @@
     function closeModal() {
       document.getElementById('loveModal').style.display = 'none';
     }
+
+    window.onload = function () {
+      document.getElementById('loveModal').style.display = 'none';
+    };
+
+    document.getElementById('envelopeBox').addEventListener('click', openModal);
   </script>
 </body>
 </html>
