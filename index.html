@@ -127,6 +127,11 @@
       align-items: center;
       padding: 20px;
       z-index: 99;
+
+
+      display: flex;
+  flex-direction: column;
+  overflow: auto;
     }
     .modal-content {
       background: #fff3f3;
@@ -138,6 +143,10 @@
       font-size: 1rem;
       line-height: 1.7;
       position: relative;
+
+
+      box-sizing: border-box;
+
     }
     .close-btn {
       position: absolute;
@@ -170,8 +179,9 @@
         height: 90px;
       }
       .modal-content {
-        padding: 20px;
-      }
+    padding: 20px;
+    font-size: 0.95rem;
+  }
 
     }
 
