@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom right, #fce4ec, #f8bbd0);
+    color: #4a148c;
+    text-align: center;
+  }
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-top: 50px;
+    color: #880e4f;
+  }
+  .envelope {
+    margin: 50px auto;
+    width: 200px;
+    height: 150px;
+    background: #d7ccc8;
+    border: 2px solid #5d4037;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .envelope:hover {
+    transform: scale(1.05);
+  }
+  .envelope span {
+    font-weight: bold;
+    color: #4e342e;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background: #fff3e0;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    color: #4e342e;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+  .close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: #d84315;
+  }
+  .memory-link {
+    display: block;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #6a1b9a;
+    font-weight: bold;
+  }
