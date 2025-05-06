@@ -155,10 +155,8 @@
       }
       .modal-content {
         padding: 20px;
-            margin-bottom: 200px;
-                    margin-top: 200px;
-
-
+        margin-bottom: 200px;
+        margin-top: 200px;
       }
     }
   </style>
@@ -181,8 +179,8 @@
     </div>
   </div>
 
-  <!-- Link to memories -->
-  <a href="memories.html" class="memory-link">View Memories of Us →</a>
+  <!-- Password-Protected Link to Memories -->
+  <a href="#" class="memory-link" onclick="checkPassword()">View Memories of Us →</a>
 
   <!-- Play Audio Button (for Mobile Devices) -->
   <button onclick="document.getElementById('loveSong').play()" style="margin-top: 30px; padding: 10px 20px; font-size: 1rem; background-color: #f06292; color: white; border: none; border-radius: 8px; cursor: pointer;">
@@ -210,9 +208,8 @@
   <audio id="loveSong">
     <source src="WhatWouldiDo.mp3" type="audio/mpeg">
   </audio>
-  
 
-  <!-- Script -->
+  <!-- Scripts -->
   <script>
     function openModal() {
       document.getElementById('loveModal').style.display = 'flex';
@@ -222,10 +219,15 @@
       document.getElementById('loveModal').style.display = 'none';
     }
 
-    function playAudio() {
-      var audio = document.getElementById('backgroundAudio');
-      audio.play();
-      document.getElementById('playAudioBtn').style.display = 'none';  // Hide the play button once audio starts
+    function checkPassword() {
+      const password = prompt(" BABYYYY ENTER THE PASSWORD HERE PLEASE! hehehehe:");
+      const correctPassword = "MOEANDJESSICAFOREVER1507"; // change this to your real password
+
+      if (password === correctPassword) {
+        window.location.href = "memories.html"; // replace with your actual memories page
+      } else if (password !== null) {
+        alert("Incorrect password. Please try again.");
+      }
     }
   </script>
 </body>
